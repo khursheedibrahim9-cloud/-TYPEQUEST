@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Challenge Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">⌨</span><div><h1>TYPE<span>QUEST</span></h1><p>Train your fingers. Beat your best.</p></div></div>
+      <div class="top-pill">⌨ TWO MODES · THREE LEVELS</div>
+    </header>
+
+    <section id="homeScreen" class="screen">
+      <div class="hero">
+        <span class="eyebrow">WELCOME TO THE ARENA</span>
+        <h2>Ready to test your<br /><span>typing reflexes?</span></h2>
+        <p>Choose a game mode, select your challenge level, and start improving your keyboard skills.</p>
+      </div>
+      <div class="mode-grid">
+        <article class="mode-card bubbles-card">
+          <div class="mode-icon">🫧</div><span class="mode-tag">LETTER RECOGNITION</span>
+          <h3>Bubbles</h3><p>Pop rising letter bubbles by pressing the matching key. Don't let them escape!</p>
+          <button class="primary start-mode" data-mode="bubbles">Play Bubbles <span>→</span></button>
+        </article>
+        <article class="mode-card magnet-card">
+          <div class="mode-icon">⌨️</div><span class="mode-tag">KEYBOARD PRECISION</span>
+          <h3>KeyMagnet</h3><p>Match the target key from the keyboard panel and sharpen your accuracy.</p>
+          <button class="primary start-mode" data-mode="magnet">Play KeyMagnet <span>→</span></button>
+        </article>
+      </div>
+      <div class="home-foot"><span>● Two unique modes</span><span>● 3 difficulty levels</span><span>● Live performance stats</span></div>
+    </section>
+
+    <section id="gameScreen" class="screen hidden">
+      <div class="game-heading">
+        <button id="homeBtn" class="ghost">← Home</button>
+        <div><span class="eyebrow" id="modeLabel">MODE</span><h2 id="gameTitle">Bubbles</h2></div>
+        <div class="difficulty-wrap"><label for="difficulty">DIFFICULTY</label><select id="difficulty"><option value="easy">Easy</option><option value="medium">Medium</option><option value="hard">Hard</option></select></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>SCORE</span><strong id="score">0</strong></div>
+        <div class="stat"><span>TIME</span><strong id="time">60s</strong></div>
+        <div class="stat"><span id="stat3Label">MISSES</span><strong id="stat3">0 / 6</strong></div>
+        <div class="stat"><span id="stat4Label">LEVEL</span><strong id="stat4">Easy</strong></div>
+      </div>
+      <div class="playfield" id="playfield">
+        <div id="gameMessage" class="game-message"><h3>Ready?</h3><p>Press Start to begin your session.</p></div>
+        <div id="bubbleLayer" class="bubble-layer"></div>
+        <div id="magnetPanel" class="magnet-panel hidden">
+          <div class="target-caption">YOUR TARGET KEY</div><div id="targetKey" class="target-key">A</div>
+          <p id="targetHint">Press the highlighted key on your keyboard.</p>
+          <div id="keyboard" class="keyboard"></div>
+        </div>
+        <div id="feedback" class="feedback"></div>
+      </div>
+      <div class="controls">
+        <button id="startBtn" class="primary">▶ Start</button>
+        <button id="restartBtn" class="secondary">↻ Restart</button>
+        <button id="resetBtn" class="ghost">Reset</button>
+        <span class="control-tip">Use your physical keyboard to play</span>
+      </div>
+      <div class="session-note" id="sessionNote">Choose difficulty, then press Start.</div>
+    </section>
+
+    <section id="resultScreen" class="screen hidden">
+      <div class="result-card">
+        <div class="result-icon" id="resultIcon">🏆</div><span class="eyebrow">SESSION COMPLETE</span>
+        <h2 id="resultTitle">Great job!</h2><p id="resultSubtitle">Here are your session results.</p>
+        <div class="result-score"><span>FINAL SCORE</span><strong id="finalScore">0</strong></div>
+        <div class="result-grid">
+          <div><span>Correct</span><strong id="resultCorrect">0</strong></div>
+          <div><span>Incorrect</span><strong id="resultWrong">0</strong></div>
+          <div><span>Accuracy</span><strong id="resultAccuracy">0%</strong></div>
+          <div><span>Avg. response</span><strong id="resultTime">—</strong></div>
+        </div>
+        <div class="result-actions"><button id="playAgainBtn" class="primary">Play Again</button><button id="resultHomeBtn" class="secondary">Home</button></div>
+      </div>
+    </section>
+    <footer>TYPEQUEST <span>·</span>  FOCUS · REACT · LEVEL UP</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
